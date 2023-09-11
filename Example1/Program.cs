@@ -1,22 +1,33 @@
-﻿//  Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+﻿// Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 
-
-// int m = Convert.ToInt32(Console.ReadLine()), n = Convert.ToInt32(Console.ReadLine());
-double[,] array = new double[3, 2];
 Random rnd = new Random();
-for (int i = 0; i < 3; i++)
+
+void PrintArray(double[,] matrix)
 {
-    for (int j = 0; j < 2; i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        array[i, j] = Math.Round(rnd.NextDouble() * 10, 2);
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j].ToString("F2")} ");
+        }
+
+        Console.WriteLine();
     }
 }
 
-for (int i = 0; i < 3; i++)
+double[,] FillArray(int m, int n)
 {
-    for (int j = 0; j < 2; i++)
+    double[,] matrix = new double[m, n];
+    for (int i = 0; i < m; i++)
     {
-        Console.WriteLine(array[i, j]);
+        for (int j = 0; j < n; j++)
+        {
+            matrix[i, j] = rnd.NextDouble() * 100;
+        }
     }
-    Console.WriteLine();
+    return matrix;
 }
+
+Console.WriteLine("Введи m и n через Enter:");
+int m = Convert.ToInt32(Console.ReadLine()), n = Convert.ToInt32(Console.ReadLine());
+PrintArray(FillArray(m, n));
