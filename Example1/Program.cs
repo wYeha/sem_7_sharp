@@ -8,7 +8,7 @@ void PrintArray(double[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j].ToString("F2")} ");
+            Console.Write($"{matrix[i, j]:F2} ");
         }
 
         Console.WriteLine();
