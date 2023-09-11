@@ -22,7 +22,7 @@ double[,] FillArray(int m, int n)
     {
         for (int j = 0; j < n; j++)
         {
-            matrix[i, j] = rnd.NextDouble() * 100;
+            matrix[i, j] = rnd.NextDouble() * 9;
         }
     }
     return matrix;
