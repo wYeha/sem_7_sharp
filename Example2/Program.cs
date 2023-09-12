@@ -40,6 +40,6 @@ int n = 5, m = 6;
 double[,] matrix = new double[n, m];
 FillArray(matrix);
 PrintArray(matrix);
-Console.WriteLine("Введи номер столбца и строки через Enter.");
+Console.WriteLine("Введи номер строки и столбца через Enter.");
 IfExist(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()), matrix);
 
